@@ -1,2 +1,86 @@
-body {
-  background: #aaa; }
+.franja-1 {
+  background-color: #e69500; }
+
+.franja-2 {
+  background-color: #cc8400; }
+
+.franja-3 {
+  background-color: #b37400; }
+
+.franja-4 {
+  height: 75px;
+  margin-bottom: 10px;
+  padding-right: 150px;
+  position: relative; }
+
+.franja-4 input[type="text"] {
+  background-color: #999900;
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+  width: 100%; }
+
+.franja-4 input[type="button"] {
+  background-color: olive;
+  float: right;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 150px; }
+
+.franja-5 {
+  background-color: #805300; }
+
+.franja-6 {
+  background-color: #664200; }
+
+.franja-7 {
+  background-color: #4d3200; }
+
+.franja-8 {
+  background-color: #332100; }
+
+.clear {
+  clear: both; }
+
+.franja {
+  height: 300px;
+  margin-bottom: 10px; }
+
+@media screen and (min-width: 481px) {
+  .first-col,
+  .second-col {
+    box-sizing: border-box;
+    float: left;
+    width: 50%; }
+  .first-col {
+    padding-right: 5px; }
+  .second-col {
+    padding-left: 5px; }
+  .third-col {
+    box-sizing: border-box;
+    clear: both; } }
+
+@media screen and (min-width: 768px) {
+  .first-col1,
+  .second-col1 {
+    box-sizing: border-box;
+    float: left;
+    width: 50%; }
+  .first-col,
+  .second-col {
+    width: 33.33%; }
+  .first-col1 {
+    padding-right: 5px; }
+  .second-col1 {
+    padding-left: 5px; }
+  .third-col {
+    clear: none;
+    float: left;
+    padding-left: 5px;
+    width: 33.34%; }
+  .sfranja-4 {
+    clear: both; }
+  .franja-8 {
+    clear: both; } }

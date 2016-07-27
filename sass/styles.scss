@@ -1,5 +1,112 @@
-$dark-color: #aaa;
+$background-color: orange;
+$amount-darker: 0%;
+$qt: 5%;
+$height: 300px;
+$margin-bottom: 10px;
+$tablet-size: 481px;
+$desktop-size: 768px;
 
-body{
-  background: $dark-color;
+@mixin cols($bool,$width-col){
+	@if $bool == 1{
+		.first-col,
+		.second-col{
+			box-sizing: border-box;
+			float: left;
+			width: $width-col;
+		}
+	}@else if ($bool ==0) {
+		.first-col1,
+		.second-col1{
+			box-sizing: border-box;
+			float: left;
+			width: $width-col;
+		}
+	}@else{
+		.first-col,
+		.second-col{
+			width: $width-col;
+		}	
+	}
+}
+
+@mixin inpt-txt($input-color) {
+    background-color: darken($input-color, $amount-darker);
+	box-sizing: border-box;
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+@mixin inpt-btn($button-color) {
+    background-color: darken($button-color, $amount-darker+$qt);
+	float: right;
+	height: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 150px;
+}
+
+@for $i from 1 through 8 {
+	$amount-darker: $amount-darker + $qt;
+	@if $i == 4 {
+		.franja-#{$i}	{
+			height: 75px;
+			margin-bottom: $margin-bottom;
+			padding-right: 150px;
+			position: relative;
+		}
+		.franja-#{$i} input[type="text"]{
+			@include inpt-txt(yellow);
+		}
+		.franja-#{$i} input[type="button"]{
+			@include inpt-btn(yellow);
+		}
+	}@else{
+		.franja-#{$i}{
+			background-color: darken($background-color, $amount-darker);
+		}
+	}
+}
+.clear{
+	clear: both;
+}
+.franja{
+	height: $height;
+	margin-bottom: $margin-bottom;
+}
+@media screen and (min-width: $tablet-size) {
+	@include cols(1,50%);
+	.first-col{
+		padding-right: 5px;
+	}
+	.second-col{
+		padding-left: 5px;
+	}
+	.third-col{
+		box-sizing:border-box;
+		clear: both;
+	}
+}
+@media screen and (min-width:$desktop-size){
+	
+	@include cols(0,50%);
+	@include cols(2,33.33%);
+	.first-col1{
+		padding-right: 5px;
+	}
+	.second-col1{
+		padding-left: 5px;
+	}
+	.third-col{
+		clear:none;
+		float: left;
+		padding-left: 5px;
+		width: 33.34%;
+	}
+	.sfranja-4{
+		clear: both;
+	}
+	.franja-8{
+		clear: both;
+	}
 }
